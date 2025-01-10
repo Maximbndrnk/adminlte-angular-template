@@ -1,3 +1,7 @@
+
+# NODE Version to use
+node 20.11.1
+
 # AdminLteImports
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.5.
