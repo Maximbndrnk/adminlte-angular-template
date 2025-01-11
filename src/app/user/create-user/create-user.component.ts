@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { JsonPipe, NgForOf } from '@angular/common';
+import { UserService } from '../../user.service';
 
 @Component({
   selector: 'app-create-user',
@@ -10,15 +11,20 @@ import { JsonPipe, NgForOf } from '@angular/common';
     JsonPipe
   ],
   templateUrl: './create-user.component.html',
+  standalone: true,
   styleUrl: './create-user.component.scss'
 })
 export class CreateUserComponent {
+  users: any[] = [];
   form: FormGroup;
   services = ['Consulting', 'Support', 'Development'];
   languages = ['English', 'Spanish', 'French', 'German'];
   validateTypes = ['Basic', 'Advanced', 'Premium'];
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private userService: UserService,
+              private fb: FormBuilder
+  ) {
     this.form = this.fb.group({
       name: ['', Validators.required],
       phone: ['', Validators.required],
@@ -33,6 +39,16 @@ export class CreateUserComponent {
         acc[`services_${service}`] = [false];
         return acc;
       }, {}),
+    });
+  }
+  ngOnInit() {
+    this.loadUsers();
+  }
+
+  loadUsers() {
+    this.userService.getUsers().subscribe((result: any) => {
+      this.users = result.data.users;
+      console.log(this);
     });
   }
 

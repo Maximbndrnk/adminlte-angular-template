@@ -3,6 +3,7 @@ const { graphqlHTTP } = require('express-graphql');
 const { buildSchema } = require('graphql');
 const fs = require('fs');
 const path = require('path');
+const cors = require('cors');
 
 // Шлях до JSON-файлу
 const DATA_FILE = path.join(__dirname, 'users.json');
@@ -69,6 +70,11 @@ const root = {
 
 // Створення сервера Express
 const app = express();
+
+app.use(cors({
+  origin: 'http://localhost:4200', // Ваш фронтенд домен
+  credentials: true, // Дозволити передачу куків, якщо потрібно
+}));
 
 app.use(
   '/graphql',
