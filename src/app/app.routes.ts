@@ -3,6 +3,9 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
 
   {
+    path: '', redirectTo: 'users', pathMatch: 'full'
+  },
+  {
     path: 'users',
     loadComponent: () =>
       import('./user/create-user/create-user.component').then((m) => m.CreateUserComponent),
