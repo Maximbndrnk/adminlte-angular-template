@@ -64,5 +64,17 @@
     "name": "Max4",
     "email": "max@gmail.com",
     "password": "fv.password"
+  },
+  {
+    "id": 12,
+    "name": "Max",
+    "email": "max@gmail.com",
+    "password": "fv.password"
+  },
+  {
+    "id": 13,
+    "name": "Max5",
+    "email": "max@gmail.com",
+    "password": "fv.password"
   }
 ]
