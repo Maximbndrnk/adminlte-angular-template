@@ -26,12 +26,12 @@ export class CreateUserComponent {
               private fb: FormBuilder
   ) {
     this.form = this.fb.group({
-      name: ['', Validators.required],
-      phone: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      holding: [''],
-      language: ['', Validators.required],
-      validateType: ['', Validators.required],
+      name: ['Max', Validators.required],
+      phone: ['123', Validators.required],
+      email: ['max@gmail.com', [Validators.required, Validators.email]],
+      holding: ['holding'],
+      language: [this.languages[0], Validators.required],
+      validateType: [this.validateTypes[0], Validators.required],
       blockUser: [false],
       // Dynamically create controls for services
       ...this.services.reduce((acc, service) => {
@@ -52,10 +52,16 @@ export class CreateUserComponent {
     });
   }
 
+
   submitForm() {
     if (this.form.valid) {
-      const formValue = { ...this.form.getRawValue() };
-      console.log('Form Submitted:', formValue);
+      const fv = { ...this.form.getRawValue() };
+      console.log('Form Submitted:', fv);
+      this.userService
+        .createUser(fv.name, fv.email, 'fv.password')
+        .subscribe(() => {
+          this.loadUsers();
+        });
     } else {
       console.log('Form is invalid');
     }

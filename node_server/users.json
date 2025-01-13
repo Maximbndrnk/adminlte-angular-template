@@ -10,5 +10,59 @@
     "name": "Jane Smith",
     "email": "jane@example.com",
     "password": "anotherpassword"
+  },
+  {
+    "id": 3,
+    "name": "max",
+    "email": "mas@ffg.cc",
+    "password": "fv.password"
+  },
+  {
+    "id": 4,
+    "name": "Max",
+    "email": "max@gmail.com",
+    "password": "fv.password"
+  },
+  {
+    "id": 5,
+    "name": "Max",
+    "email": "max@gmail.com",
+    "password": "fv.password"
+  },
+  {
+    "id": 6,
+    "name": "Max",
+    "email": "max@gmail.com",
+    "password": "fv.password"
+  },
+  {
+    "id": 7,
+    "name": "Max",
+    "email": "max@gmail.com",
+    "password": "fv.password"
+  },
+  {
+    "id": 8,
+    "name": "Max",
+    "email": "max@gmail.com",
+    "password": "fv.password"
+  },
+  {
+    "id": 9,
+    "name": "Max2",
+    "email": "max@gmail.com",
+    "password": "fv.password"
+  },
+  {
+    "id": 10,
+    "name": "Max3",
+    "email": "max@gmail.com",
+    "password": "fv.password"
+  },
+  {
+    "id": 11,
+    "name": "Max4",
+    "email": "max@gmail.com",
+    "password": "fv.password"
   }
 ]
